@@ -6,7 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  // changing text.
+  text = 'Welcome to the Ionic Blank starter app.';
 
   constructor() {}
+
+  onChangeText(): void {
+    this.text = 'Text changed';
+  }
 
 }

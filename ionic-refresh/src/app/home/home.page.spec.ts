@@ -21,4 +21,9 @@ describe('HomePage', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should change text', () => {
+    component.onChangeText();
+    expect(component.text).toEqual('Text changed');
+  });
 });
