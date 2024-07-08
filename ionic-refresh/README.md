@@ -104,6 +104,23 @@ Other useful commands
 ```
 
 ## Section 2 - Angular Refresher
+ng new for angular refresher
+
+with:
+```
+    npm install -g @angular/cli
+    ng new chapter-2-ng-refresher
+    cd chapter-2-ng-refresher
+```
+
+Run and build
+
+```
+    ng serve
+    ng build
+```
+
+
 ## Section 3 - Ionic Component Basics
 
 ## Section 4 - Angular + Ionic
