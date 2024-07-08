@@ -106,7 +106,6 @@ Other useful commands
 ## Section 2 - Angular Refresher
 ng new for angular refresher
 
-with:
 ```
     npm install -g @angular/cli
     ng new chapter-2-ng-refresher
@@ -119,6 +118,16 @@ Run and build
     ng serve
     ng build
 ```
+
+---
+Add a component
+
+```
+    ng generate component persons
+    or
+    ng g c persons
+```
+Also deleted the generic cruft from app.component.html
 
 
 ## Section 3 - Ionic Component Basics
