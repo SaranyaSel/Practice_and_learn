@@ -30,10 +30,13 @@ Add the script to package.json
 ```
 
 Add index.html and index.ts
+and run demo and watch the console
 
-To Run
-```
-    # add some script options to run vite
+Chapter: 1
+ Quick start
 
-```
-run demo and watch the console
+Chapter: 2
+ Warmup
+ Warmup with multiple subscription
+
+

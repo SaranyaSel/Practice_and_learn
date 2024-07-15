@@ -1,7 +1,7 @@
 {
   "name": "rxjs-7-and-observables-udemy",
   "version": "1.0.0",
-  "description": "Udemy: RxJS 7 and Observables: Observable - how does it work?",
+  "description": "Udemy: RxJS 7 and Observables: 2: Observable - how does it work?",
   "main": "index.js",
   "scripts": {
     "dev": "vite",
