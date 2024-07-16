@@ -1,7 +1,7 @@
 {
   "name": "rxjs-7-and-observables-udemy",
   "version": "1.0.0",
-  "description": "Udemy: RxJS 7 and Observables: Introduction",
+  "description": "Udemy: RxJS 7 and Observables",
   "main": "index.js",
   "scripts": {
     "dev": "vite",
