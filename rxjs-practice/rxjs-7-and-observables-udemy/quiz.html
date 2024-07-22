@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        Quiz
+    </h1>
+
+    <ul>
+        <li>
+            Which are the possible ways of ending a Subscription made to an Observable created using the interval(1000)
+            call?
+            We can unsubscribe.
+        </li>
+        <li>
+            Should we unsubscribe to avoid memory leaks from the Observable created using the timer(2000) call after it
+            emits a value?
+            No, at this point we're sure that the Observable has completed, so there's no need to unsubscribe.
+        </li>
+        <li>
+            The Observables created using the fromEvent function are Hot. Why is it like this?
+            Because they connect to an already existing event source.
+        </li>
+        <li>
+            What is the 'next' notification
+            used for?
+            emitting a value</li>
+        <li>
+            How many values can an
+            Observable emit during the Subscription's lifetime?
+            Zero or more
+        </li>
+        <li>
+            Is it possible to emit a value
+            after an error?
+            No, the error notification signals an issue with the source and causes the Subscription to end.
+        </li>
+        <li>
+            What is the purpose of the
+            complete notification?
+            to signal that the Observable has no more data to emit
+        </li>
+        <li>
+            Choose which doesn't apply to
+            both - the error and complete notifications:
+            can carry a payload with it
+            <br>
+            what does apply to
+            both - the error and complete notifications:
+            can be emitted only once during the Subscription lifetime
+            ends the Subscription
+        </li>
+
+        <li>
+            What are the ways in which
+            a Subscription can end?
+            It can be ended by the Observable's logic by emitting an error or complete notification.
+            It can be ended by our code by unsubscribing.
+            both are same
+        </li>
+        <li>
+            What is the purpose of the
+            Teardown logic?
+            It can be used to perform a clean-up or cancellation if the Observable initialized some resources.
+        </li>
+        <li>
+            Let's assume that an
+            Observable has some Teardown logic provided. When will it be executed?
+            Whenever the Subscription ends.
+        </li>
+        <li>
+            Each time we subscribe, the
+            Observable generates and emits the same set of values instantly and then completes. Which
+            behavior is it?
+            Cold Observable
+        </li>
+        <li>
+            We have an Observable which
+            emits an event each time the user resizes the browser's window. Which Observable type is
+            it?
+            Hot Observable
+        </li>
+        <li>
+            We have an Observable which
+            sends an HTTP request to an external server each time we subscribe to it. Which is
+            it?
+            Cold Observable
+        </li>
+        <li>
+            An
+            Observable:
+            can change its behavior, for example it can be Cold at first and then become Hot
+        </li>
+        <li>
+           Which of the following statements are true about Observables?</legend>
+                We need to subscribe to an Observable to run its logic.
+        </li>
+        <li>
+            When we subscribe a few times to the same Observable?The logic of the Observable will be run independently for each new
+                    Subscription.
+        </li>
+        <li>What happens each time you subscribe to an Observable?
+            The Observable's logic is executed.
+            The provided Observer is wrapped into a Subscriber object and passed to the
+                    Observable's logic.Both answers are correct.
+        </li>
+        <li>
+            When we have an Observable which never ends and keeps emitting the values, how can we make it
+                    stop?We can unsubscribe.
+        </li>
+        <li>
+            The Observables created using the fromEvent function are Hot. Why is it like this?
+            Because they connect to an already existing event source.
+        </li>
+        <li>
+            Should we unsubscribe to avoid memory leaks from the Observable created using the timer(2000) call after it emits a value?
+            No, at this point we're sure that the Observable has completed, so there's no need to unsubscribe.
+        </li>
+        <li>
+            Which are the possible ways of ending a Subscription made to an Observable created using the interval(1000) call?
+            We can unsubscribe.
+        </li>
+        <li>
+            Which is correct for both forkJoin and combineLatest?
+            They accept an array of Observables as an argument.
+        </li>
+        <li>
+            What would an Observable created using forkJoin([of('ABC'), timer(1000)]) emit once we subscribe to it?
+                It'd emit an array with the values 'ABC' and the value 0, one second after subscribing
+        </li>
+        <li>
+            What would an Observable created using forkJoin([of('ABC'), interval(1000)]) emit once we subscribe to it?
+            It won't emit anything as the second provided Observable never completes.
+        </li>
+        <li>
+            What would an Observable created using combineLatest([of('ABC'), interval(1000)]) emit once we subscribe to it?
+            It'd emit an array with the values 'ABC' and the value of the interval counter every second.
+        </li>
+
+    </ul>
+    <p>
+        Note about ajax() creation function
+In the following lecture about the forkJoin function we'll use the ajax<T>(url: string) function to create an Observable making an HTTP call.
+
+More details about how to use it will be covered in the lesson, however please note that in the most recent version of RxJS you should provide the type of the response of the ajax call if you're using TypeScript.
+
+In other words, to avoid typing errors in this coding section you should use:
+const randomName$ = ajax<any>('...');
+
+instead of
+
+const randomName$ = ajax('...');
+
+which was used in the video and is no longer valid if you're using TypeScript. For regular JavaScript applications it's still valid.
+    </p>
+    <p>
+        Importing Operators
+In the videos in this section, the Pipeable Operators are imported from "rxjs/operators", for example:
+
+import { filter } from "rxjs/operators";
+
+Starting from RxJS v7.2.0 you can import the operators directly from the top level (from "rxjs"), for example:
+
+import { filter } from "rxjs";
+
+Thanks to this, you can keep all your RxJS-related imports together:
+
+import { filter, Observable, Subscription } from "rxjs";
+
+The original way of importing operators still works, but will be deprecated in the future.
+    </p>
+</body>
+
+</html>

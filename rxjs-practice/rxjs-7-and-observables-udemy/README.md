@@ -30,17 +30,13 @@ Add the script to package.json
 ```
 
 Add index.html and index.ts
-and run demo and watch the console
+and Navigate to the directory and run
 
-Chapter: 1
- Quick start
+```
+ npm run dev
+```
+And watch http://localhost:5173/ this will show all the list of observables.
 
-Chapter: 2
- Warmup
- Warmup with multiple subscription
 
-Chapter: 3
- Empty Observable
- Sync Emission
- Async Emission
- 
+
+
