@@ -1,32 +1,32 @@
 import { ajax } from "rxjs/ajax";
 import appendToBody from "./append_to_body";
-const ajax$ = ajax<any>('https://random-data-api.com/api/name/random_name');
+const ajax$ = ajax<any>('https://randomuser.me/api/');
 
 ajax$.subscribe(
   data => {
     if (data) {
-      appendToBody(`Sub 1: ${data.response.first_name}`);
+      appendToBody(`Sub 1: ${data.response.results[0].name.first}`);
     }
   }
 );
 
 setTimeout(() => {
-  appendToBody('Subscribing after 2 seconds. But due the server limits, it will not work sometimes');
+  appendToBody('Subscribing after 2 seconds. ');
   ajax$.subscribe(
     data => {
       if (data) {
-        appendToBody(`Sub 2: ${data.response.first_name}`);
+        appendToBody(`Sub 2: ${data.response.results[0].name.first}`);
       }
     }
   );
 }, 2000);
 
 setTimeout(() => {
-  appendToBody('Subscribing after 5 seconds. But due the server limits, it will not work');
+  appendToBody('Subscribing after 5 seconds');
   ajax$.subscribe(
     data => {
       if (data) {
-        console.log(`Sub 3: ${data.response.first_name}`);
+        appendToBody(`Sub 3: ${data.response.results[0].name.first}`);
       }
     }
   );
