@@ -1,5 +1,5 @@
 import { Observable } from "rxjs";
-import appendToBody from "./append_to_body";
+import appendToBody from "../append_to_body";
 
 const observable$ = new Observable<string>(subscriber => {
   appendToBody('Observable executed');
@@ -8,10 +8,9 @@ const observable$ = new Observable<string>(subscriber => {
   setTimeout(() => subscriber.next('Charlie'), 4000);
 });
 
-appendToBody('Subscription 1 starts');
-observable$.subscribe(value => appendToBody(`Subscription 1: ${value}`));
+const subscription = observable$.subscribe(value => appendToBody(value));
 
 setTimeout(() => {
-  appendToBody('Subscription 2 starts');
-  observable$.subscribe(value => appendToBody(`Subscription 2: ${value}`));
-}, 1000);
+  appendToBody('Unsubscribe');
+  subscription.unsubscribe();
+}, 3000);

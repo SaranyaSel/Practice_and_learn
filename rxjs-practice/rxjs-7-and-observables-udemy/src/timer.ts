@@ -1,5 +1,5 @@
 import { Observable, timer } from "rxjs";
-import appendToBody from "./append_to_body";
+import appendToBody from "../append_to_body";
 
 // method 1 without tear down logic
 timer(2000).subscribe({

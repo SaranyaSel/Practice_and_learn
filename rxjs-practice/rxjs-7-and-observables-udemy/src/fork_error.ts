@@ -1,5 +1,5 @@
 import { forkJoin, Observable } from "rxjs";
-import appendToBody from "./append_to_body";
+import appendToBody from "../append_to_body";
 
 const a$ = new Observable(subscriber => {
   setTimeout(() => {

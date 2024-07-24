@@ -1,5 +1,5 @@
 import { Observable } from "rxjs";
-import appendToBody from "./append_to_body";
+import appendToBody from "../append_to_body";
 
 const helloButton = document.querySelector('button#hello') as HTMLElement;
 

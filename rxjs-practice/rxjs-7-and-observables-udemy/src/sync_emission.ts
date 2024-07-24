@@ -1,5 +1,5 @@
 import { Observable } from "rxjs";
-import appendToBody from "./append_to_body";
+import appendToBody from "../append_to_body";
 
 // Sync emission
 const observable$ = new Observable<string>(subscriber => {

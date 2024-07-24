@@ -1,5 +1,5 @@
 import { ajax } from "rxjs/ajax";
-import appendToBody from "./append_to_body";
+import appendToBody from "../append_to_body";
 const ajax$ = ajax<any>('https://randomuser.me/api/');
 
 ajax$.subscribe(

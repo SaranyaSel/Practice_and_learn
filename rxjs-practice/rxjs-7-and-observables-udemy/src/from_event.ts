@@ -1,5 +1,5 @@
 import { fromEvent, Observable } from "rxjs";
-import appendToBody from "./append_to_body";
+import appendToBody from "../append_to_body";
 
 // method 1
 const triggerButton = document.querySelector('button#trigger') as HTMLButtonElement;

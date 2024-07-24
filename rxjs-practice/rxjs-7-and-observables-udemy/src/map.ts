@@ -2,7 +2,7 @@ import { forkJoin } from "rxjs";
 
 import { ajax } from "rxjs/ajax";
 import { map } from "rxjs/operators";
-import appendToBody from "./append_to_body";
+import appendToBody from "../append_to_body";
 
 const randomFirstName$ = ajax<any>('https://randomuser.me/api/').pipe(
     map((ajaxResponse) => ajaxResponse.response.results[0].name.first)

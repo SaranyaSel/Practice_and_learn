@@ -1,5 +1,5 @@
 import { filter, Observable } from "rxjs";
-import appendToBody from "./append_to_body";
+import appendToBody from "../append_to_body";
 
 interface NewsItem {
     category: 'Business' | 'Sports';

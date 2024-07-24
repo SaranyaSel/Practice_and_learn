@@ -1,5 +1,5 @@
 import { Observable } from "rxjs";
-import appendToBody from "./append_to_body";
+import appendToBody from "../append_to_body";
 
 const interval$ = new Observable<number>(subscriber => {
   let counter = 1;

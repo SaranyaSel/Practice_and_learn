@@ -1,23 +1,15 @@
 import { Observable } from "rxjs";
-import appendToBody from "./append_to_body";
+import appendToBody from "../append_to_body";
 
-// Teardown and complete notification
+// Async emission
 const observable$ = new Observable<string>(subscriber => {
   appendToBody('Observable executed');
   subscriber.next('Hello');
   setTimeout(() => {
     subscriber.next('World');
-    subscriber.complete();
   }, 2000);
-
-  return () => {
-    appendToBody('Teardown');
-  };
 });
 
 appendToBody('Before subscription');
-observable$.subscribe({
-  next: (value) => appendToBody(value),
-  complete: () => appendToBody('Completed')
-});
+observable$.subscribe((value) => appendToBody(value));
 appendToBody('After subscription');
