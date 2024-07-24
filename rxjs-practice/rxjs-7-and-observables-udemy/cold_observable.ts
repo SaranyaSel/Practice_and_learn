@@ -1,14 +1,6 @@
 import { ajax } from "rxjs/ajax";
-
+import appendToBody from "./append_to_body";
 const ajax$ = ajax<any>('https://random-data-api.com/api/name/random_name');
-
-// Function to append text to the body of the document
-function appendToBody(message: string) {
-  const node = document.createElement("p");
-  const textNode = document.createTextNode(message);
-  node.appendChild(textNode);
-  document.body.appendChild(node);
-}
 
 ajax$.subscribe(
   data => {

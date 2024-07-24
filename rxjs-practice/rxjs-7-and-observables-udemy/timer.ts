@@ -1,13 +1,5 @@
 import { Observable, timer } from "rxjs";
-
-
-// Function to append text to the body of the document
-function appendToBody(message: string) {
-  const node = document.createElement("p");
-  const textNode = document.createTextNode(message);
-  node.appendChild(textNode);
-  document.body.appendChild(node);
-}
+import appendToBody from "./append_to_body";
 
 // method 1 without tear down logic
 timer(2000).subscribe({
