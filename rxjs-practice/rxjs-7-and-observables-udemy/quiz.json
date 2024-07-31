@@ -1,0 +1,171 @@
+[
+    {
+        "question": "Which are the possible ways of ending a Subscription made to an Observable created using the interval(1000) call?",
+        "answer": "We can unsubscribe."
+    },
+    {
+        "question": "Should we unsubscribe to avoid memory leaks from the Observable created using the timer(2000) call after it emits a value?",
+        "answer": "No, at this point we're sure that the Observable has completed, so there's no need to unsubscribe."
+    },
+    {
+        "question": "The Observables created using the fromEvent function are Hot. Why is it like this?",
+        "answer": "Because they connect to an already existing event source."
+    },
+    {
+        "question": "Should we unsubscribe to avoid memory leaks from the Observable created using the timer(2000) call after it emits a value?, used for?",
+        "answer": "emitting a value"
+    },
+    {
+        "question": "How many values can an Observable emit during the Subscription's lifetime?",
+        "answer": "Zero or more"
+    },
+    {
+        "question": "Is it possible to emit a value after an error?",
+        "answer": "No, the error notification signals an issue with the source and causes the Subscription to end."
+    },
+    {
+        "question": "What is the purpose of the complete notification?",
+        "answer": "to signal that the Observable has no more data to emit"
+    },
+    {
+        "question": "Choose which doesn't apply to both - the error and complete notifications: can carry a payload with it",
+        "answer": "what does apply t both - the error and complete notifications:can be emitted only once during the Subscription lifetime ends the Subscription"
+    },
+    {
+        "question": "What are the ways in which a Subscription can end?",
+        "answer": "It can be ended by the Observable's logic by emitting an error or complete notification. It can be ended by our code by unsubscribing. both are same"
+    },
+    {
+        "question": "What is the purpose of the Teardown logic?",
+        "answer": "It can be used to perform a clean-up or cancellation if the Observable initialized some resources."
+    },
+    {
+        "question": "Let's assume that an Observable has some Teardown logic provided. When will it be executed?",
+        "answer": "Whenever the Subscription ends."
+    },
+    {
+        "question": "Each time we subscribe, the Observable generates and emits the same set of values instantly and then completes. Which behavior is it?",
+        "answer": "Cold Observable"
+    },
+    {
+        "question": "We have an Observable which emits an event each time the user resizes the browser's window. Which Observable type is it?",
+        "answer": "Hot Observable"
+    },
+    {
+        "question": "We have an Observable which sends an HTTP request to an external server each time we subscribe to it. Which is it?",
+        "answer": "Cold Observable"
+    },
+    {
+        "question": "An Observable:",
+        "answer": "can change its behavior, for example it can be Cold at first and then become Hot"
+    },
+    {
+        "question": "Which of the following statements are true about Observables?</legend>",
+        "answer": "We need to subscribe to an Observable to run its logic."
+    },
+    {
+        "question": "When we subscribe a few times to the same Observable?",
+        "answer": "The logic of the Observable will be run independently for each new Subscription."
+    },
+    {
+        "question": "What happens each time you subscribe to an Observable?",
+        "answer": "The Observable's logic is executed. The provided Observer is wrapped into a Subscriber object and passed to the Observable's logic.Both answers are correct."
+    },
+    {
+        "question": "When we have an Observable which never ends and keeps emitting the values, how can we make it stop?",
+        "answer": "We can unsubscribe."
+    },
+    {
+        "question": "The Observables created using the fromEvent function are Hot. Why is it like this?",
+        "answer": "Because they connect to an already existing event source."
+    },
+    {
+        "question": "Should we unsubscribe to avoid memory leaks from the Observable created using the timer(2000) call after it emits a value?",
+        "answer": "No, at this point we're sure that the Observable has completed, so there's no need to unsubscribe."
+    },
+    {
+        "question": "Which are the possible ways of ending a Subscription made to an Observable created using the interval(1000) call?",
+        "answer": "We can unsubscribe."
+    },
+    {
+        "question": "Which is correct for both forkJoin and combineLatest?",
+        "answer": "They accept an array of Observables as an argument."
+    },
+    {
+        "question": "What would an Observable created using forkJoin([of('ABC'), timer(1000)]) emit once we subscribe to it?",
+        "answer": "It'd emit an array with the values 'ABC' and the value 0, one second after subscribing"
+    },
+    {
+        "question": "What would an Observable created using forkJoin([of('ABC'), interval(1000)]) emit once we subscribe to it?",
+        "answer": "It won't emit anything as the second provided Observable never completes."
+    },
+    {
+        "question": "What would an Observable created using combineLatest([of('ABC'), interval(1000)]) emit once we subscribe to it?",
+        "answer": "It'd emit an array with the values 'ABC' and the value of the interval counter every second."
+    },
+    {
+        "question": "How many operators can you apply using the pipe method on the Observable?",
+        "answer": "any number of operators"
+    },
+    {
+        "question": "Which is correct?",
+        "answer": "Applying a Pipeable Operator creates a new Observable with some additional logic."
+    },
+    {
+        "question": "Which can be accomplished by using the Pipeable Operators?",
+        "answer": "mapping the values of next notifications, debouncing the values in time, providing a fallback Observable in case of an error and all of the above"
+    }
+    ,
+    {
+        "question": "How does the tap operator transform the notifications?",
+        "answer": "It doesn't transform notifications of any type."
+    },
+    {
+        "question": "If we use a catchError operator applied like this: catchError(() => fallbackObservable$), when will it subscribe to the fallbackObservable$?",
+        "answer": "When the main/outer Observable will emit an error."
+    },
+    {
+        "question": "Which can be achieved by using a Flattening Operator such as concat/switch/mergeMap?",
+        "answer": "Storing some data on a server, each time the user changes some setting. Fetching autocomplete ideas based on the user's search input query.Mapping each emitted value to a new Observable. All of the above."
+    },
+    {
+        "question": "How does a Flattening Operator such as concat/switch/mergeMap work?",
+        "answer": "It maps each value into a new Observable, creates a Subscription to this Observable and then passes the values emitted by it to the output."
+    },
+    {
+        "question": "Which notifications coming from the Inner Observable does a Flattening Operator pass to the output?",
+        "answer": "next and error notifications"
+    },
+    {
+        "question": "What will happen if the Inner Observable passed to a concat/switch/mergeMap operator emits an error?",
+        "answer": "This error will be passed to the output and the Outer Subscription will error as well."
+    },
+    {
+        "question": "Which is true for the concatMap operator?",
+        "answer": "It waits until the Subscription handling the previous value completes before starting a new one."
+    },
+    {
+        "question": "Which is true for the switchMap operator?",
+        "answer": "It cancels the previous Inner Subscription and starts a new one right away."
+    },
+    {
+        "question": "Which is true for the mergeMap operator?",
+        "answer": "It concurrently handles all the values."
+    },
+    {
+        "question": "Which is true for a Subject?",
+        "answer": "It allows us to call the `next` method on it to emit a value to all active subscriptions.It can be passed as an Observer to the `subscribe` method.We can subscribe to it the same way we can to regular Observables.We can mix it together with other Observables when using combineLatest. All of the above."
+    },
+    {
+        "question": "Which would be a better choice if you'd like to be able to store some value and react to its changes?",
+        "answer": "BehaviorSubject"
+    },
+    {
+        "question": "Which would be a better choice to emit events which would trigger a refresh of the data?",
+        "answer": "Subject"
+    },
+    {
+        "question": "Which is true for a BehaviorSubject?",
+        "answer": "You ALWAYS need to provide some initial value when creating a new BehaviorSubject."
+    }
+]

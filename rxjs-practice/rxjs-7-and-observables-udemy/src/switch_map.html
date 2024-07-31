@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Observable - switchMap</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <h2 class="my-4">Observable - switchMap</h2>
+    <p>
+      switchMap is similar to mergeMap, but it will cancel the previous inner observable when a new value is emitted.
+      switchMap A is running, and switchMap B is emitted, then switchMap A will be canceled and switchMap B will be executed.</p>
+      switchMap operator will cancel/unsubscribes the previous inner subscription and create a new inner subscription.
+      Memory leak perspecive, if the inner Observable wouldn't complete, that's not a problem because each new value emitted by the source Observable cancels the previous inner Subscription.
+      Memory leaks not dangerous.
+      IT has only one active inner subscription at the same time and its always the one for the latest value emitted by the source Observable.
+      This operator is good for its responsiveness as it doesn't wait for the previous inner subscription to finish before starting a new one for the latest value emitted by the source Observable.
+      Quick reaction to new source values.
+      Order mostly safe and predictable as the most recent value emitted by source.
+
+  </div>
+  <p>
+    click in the document to see the switchMap in action
+  </p>
+  <script type="module" src="switch_map.ts"></script>
+</body>
+</html>

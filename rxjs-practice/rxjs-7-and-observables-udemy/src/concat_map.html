@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Observable - concatMap</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <h2 class="my-4">Observable - concatMap</h2>
+    <p>
+      concatMap is similar to mergeMap, but it will wait for the previous inner observable to complete before
+      subscribing to the next one.
+      concatMap A is still running, and concatMap B is waiting for concatMap A to complete.
+      when concatMap A not completed then it will be struck in the first observable.
+
+      concatMap operator will queue the incoming values and as soon as the previous inner subscription completes, it
+      will handle the next value in the bugger and create a new inner subscription.
+      Memory leaks easy to notice.
+      Values handled one by one. Previous subscription will be completed before emitting the new one.
+      So its safest one.
+      Possible delayed reactions.
+
+    </p>
+    <div class="my-4 form-inline">
+      <div class="d-flex">
+        <input id="endpoint" class="form-control" type="text" />
+        <button id="fetch" class="btn btn-primary mx-1">Fetch</button>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="concat_map.ts"></script>
+</body>
+
+</html>

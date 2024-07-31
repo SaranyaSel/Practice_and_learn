@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Observable - tap</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <h2 class="my-4">Observable - tap</h2>
+    Map,filter and tap order of execution in pipe method of observable is important.
+    example:
+    <pre>
+      <code>
+        const source$ = of(1,2,3,4,5);
+        source$.pipe(
+          tap(val => console.log('Before map:', val)),
+          map(val => val + 10),
+          tap(val => console.log('After map:', val)),
+          filter(val => val > 15),
+          tap(val => console.log('After filter:', val))
+        ).subscribe(console.log);
+      </code>
+    </pre>
+
+  </div>
+  <script type="module" src="tap.ts"></script>
+</body>
+</html>
