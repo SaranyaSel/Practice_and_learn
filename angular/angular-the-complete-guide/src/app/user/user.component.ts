@@ -8,18 +8,18 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrl: './user.component.scss',
 })
 export class UserComponent {
- @Input({required: true}) id!: string;
+  @Input({ required: true }) user!: {
+    id: string;
+    avatar: string;
+    name: string;
+  };
 
- @Input({required: true}) avatar!: string;
+  @Output() selectUser = new EventEmitter<string>();
 
- @Input({required: true}) name!: string;
-
- @Output() selectUser = new EventEmitter<string>();
-
- get avatarUrl() {
-  return 'assets/users/' + this.avatar;
- }
+  get avatarUrl() {
+    return 'assets/users/' + this.user.avatar;
+  }
   onSelectUser(): void {
-    this.selectUser.emit(this.id);
+    this.selectUser.emit(this.user.id);
   }
 }
