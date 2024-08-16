@@ -17,15 +17,15 @@ import { TasksSignalsComponent } from './tasks-signals/tasks-signals.component';
 export class AppComponent {
   title = 'angular-the-complete-guide';
   users = DUMMY_USERS;
-  selectedUserId = 'u1';
-
-  onSelectUser(id: string): void {
-    console.log('Selected user with id' + id);
-    this.selectedUserId = id;
-  }
+  selectedUserId?: string;
 
   get selectedUser() {
     // it can have undefined value so using !. if you think there might be undefined value then use ?.
     return this.users.find((user)=> user.id===this.selectedUserId)!;
+  }
+
+  onSelectUser(id: string): void {
+    console.log('Selected user with id' + id);
+    this.selectedUserId = id;
   }
 }
