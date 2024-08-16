@@ -17,7 +17,7 @@ import { TasksSignalsComponent } from './tasks-signals/tasks-signals.component';
 export class AppComponent {
   title = 'angular-the-complete-guide';
   users = DUMMY_USERS;
-  selectedUserId = '';
+  selectedUserId = 'u1';
 
   onSelectUser(id: string): void {
     console.log('Selected user with id' + id);
