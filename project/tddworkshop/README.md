@@ -1,4 +1,9 @@
 # Tddworkshop
+ng new tddworkshop
+
+removed karma in package.json and angular.json
+
+npm install --save-dev @types/jest jest jest-preset-angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.1.
 
