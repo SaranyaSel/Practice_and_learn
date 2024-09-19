@@ -21,3 +21,17 @@ test('rotates left', () => {
   expect(rover({ x: 0, y: 0, d: 'S', commands: ["l"] })).toEqual({ x: 0, y: 0, d: 'E' });
   expect(rover({ x: 0, y: 0, d: 'E', commands: ["l"] })).toEqual({ x: 0, y: 0, d: 'N' });
 })
+
+test('From all direction forward move', () => {
+  expect(rover({ x: 0, y: 0, d: 'N', commands: ["f"] })).toEqual({ x: 0, y: 1, d: 'N' });
+  expect(rover({ x: 0, y: 0, d: 'E', commands: ["f"] })).toEqual({ x: 1, y: 0, d: 'E' });
+  expect(rover({ x: 0, y: 0, d: 'S', commands: ["f"] })).toEqual({ x: 0, y: -1, d: 'S' });
+  expect(rover({ x: 0, y: 0, d: 'W', commands: ["f"] })).toEqual({ x: -1, y: 0, d: 'W' });
+})
+
+test('From all direction backward move', () => {
+  expect(rover({ x: 0, y: 0, d: 'N', commands: ["b"] })).toEqual({ x: 0, y: -1, d: 'N' });
+  expect(rover({ x: 0, y: 0, d: 'E', commands: ["b"] })).toEqual({ x: -1, y: 0, d: 'E' });
+  expect(rover({ x: 0, y: 0, d: 'S', commands: ["b"] })).toEqual({ x: 0, y: 1, d: 'S' });
+  expect(rover({ x: 0, y: 0, d: 'W', commands: ["b"] })).toEqual({ x: 1, y: 0, d: 'W' });
+})
